@@ -1,5 +1,4 @@
 import {CheckoutItemContainer,ImageContainer,BaseSpan,Quantity,Value,Arrow,RemoveButton} from './checkout-item.styles';
-import { useContext } from 'react';
 
 import { useSelector,useDispatch } from 'react-redux';
 
