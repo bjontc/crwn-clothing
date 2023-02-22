@@ -3,7 +3,6 @@ import FormInput from "../form-input/form-input.component";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import {SignUpContainer} from './sign-up-form.styles';
 import Button from "../button/button.component";
-import { useCallback } from "react";
 
 const defaultFormFields = {
     displayName:'',
@@ -25,7 +24,7 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if(password != confirmPassword){
+        if(password !== confirmPassword){
             alert('passwords do not match!');
             return;
         }
@@ -39,7 +38,7 @@ const SignUpForm = () => {
 
 
         } catch(error) {
-            if(error.code == "auth/email-already-in-use") {
+            if(error.code === "auth/email-already-in-use") {
                 alert('cannot create user, email already in use');
             } else {
             console.log('user creation encountered an error', error)
